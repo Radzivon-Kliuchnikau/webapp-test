@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Web App  </title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Web App</title>
+  </head>
+  <body>
     <h1>Static Web App</h1>
     <button id="triggered" type="button">Call Function</button>
 
     <script>
-        var getBtn = document.getElementById('triggered');
-        getBtn.addEventListener('click', callAPI);
+      var getBtn = document.getElementById("triggered");
+      getBtn.addEventListener("click", callAPI);
 
-        function callAPI() {
-            let data = {number: 345}
-        }
+      function callAPI() {
+        let data = { number: 345 };
 
         fetch("/api/HttpTrigger1", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data) 
-        }).then(res => {
-            console.log("Request completed: response", res)
-        })
-
-
-
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }).then((res) => {
+          console.log("Request completed: response", res);
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
